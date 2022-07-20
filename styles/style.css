@@ -1,0 +1,34 @@
+:root {
+    --blue: #1992D4;
+    --yellow: #facc15;
+    --grey: #E2E8F0;
+    --white: #ffffff;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+    "aside header"
+    "aside main";
+}
+
+aside {
+    background-color: var(--blue);
+    color: var(--white);
+    grid-area: aside;
+}
+
+header {
+    background-color: var(--grey);
+    grid-area: header;
+}
+
+main {
+    background-color: var(--white);
+    grid-area: main;
+}
