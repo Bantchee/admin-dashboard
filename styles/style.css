@@ -1,5 +1,6 @@
 :root {
     --blue: #1992D4;
+    --light-blue: #5eb2e0;
     --yellow: #facc15;
     --grey: #E2E8F0;
     --white: #ffffff;
@@ -7,7 +8,7 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -19,6 +20,7 @@ body {
     "aside main";
 }
 
+/* ASIDE */
 aside {
     background-color: var(--blue);
     color: var(--white);
@@ -26,13 +28,22 @@ aside {
     
     display: flex;
     flex-direction: column;
-    row-gap: 64px;
-    padding-left: 32px;
+    row-gap: 24px;
+}
+
+aside a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+aside a:hover {
+    background-color: var(--light-blue);
 }
 
 aside div.logo a {
     display: flex;
     align-items: center;
+    font-size: 24px;
 }
 
 aside div.logo a img {
@@ -40,22 +51,87 @@ aside div.logo a img {
     height: 80px;
 }
 
-aside nav img {
+aside nav a {
+    display: flex;
+    align-items: center;
+    padding-left:16px;
+    font-size: 20px;
+}
+
+aside nav a img {
     width: 32px;
     height: 32px;
 }
 
-aside nav a {
+/* HEADER */
+header {
+    background-color: var(--white);
+    grid-area: header;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 
+        "search profile1"
+        "profile2 buttons";
+}
+
+header div.search {
+    grid-column: search;
+
     display: flex;
+    column-gap: 10px;
     align-items: center;
 }
 
-header {
-    background-color: var(--grey);
-    grid-area: header;
+header div.search img {
+    width: 24px;
+    height: 24px;
 }
 
+header div.search form {
+    flex: auto;
+}
+
+header div.search form input {
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--grey);
+    border: none;
+}
+
+header div.profile-1 {
+    grid-column: profile1;
+    display: flex;
+    justify-content: end;
+}
+
+header div.profile-1 a.bell-notification img {
+    width: 24px;
+    height: 24px;
+}
+
+header div.profile-1 a.pro-1-link {
+    display: flex;
+}
+
+header div.profile-1 a.pro-1-link img {
+    width: 24px;
+    height: 24px;
+}
+
+header div.profile-2 {
+    grid-column: profile2;
+    background-color: blue;
+}
+
+header div.buttons {
+    grid-column: buttons;
+    background-color: yellow;
+}
+
+/* MAIN */
 main {
-    background-color: var(--white);
+    background-color: var(--grey);
     grid-area: main;
 }
