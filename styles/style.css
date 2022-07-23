@@ -1,4 +1,7 @@
 :root {
+    margin: 0;
+    padding: 0;
+
     --dark-blue: #1474A9;
     --blue: #1992D4;
     --light-blue: #5eb2e0;
@@ -9,13 +12,16 @@
 
 body {
     width: 100vw;
+    max-width: 100%;
     /* height: 100vh; */
+    margin: 0;
+    padding: 0;
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-areas: 
     "aside header"
     "aside main";
@@ -147,9 +153,12 @@ header div.profile-1 a.pro-1-link {
 header div.profile-1 a.pro-1-link img {
     width: 32px;
     height: 32px;
-    background-color: var(--grey);
     border: 2px solid black;
     border-radius: 100%;
+}
+
+header div.profile-1 a.pro-1-link img:hover {
+    background-color: var(--grey);
 }
 
 header div.profile-1 a.pro-1-link p {
@@ -218,8 +227,136 @@ header div.buttons button:hover {
     text-decoration: underline;
     background-color: var(--dark-blue);
 }
-/* MAIN */
-main {
+/* ARTICLE */
+article {
     background-color: var(--grey);
+    padding-right: 32px;
     grid-area: main;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    row-gap: 16px;
+    grid-template-areas: 
+        "projects announcements"
+        "projects tending";
+}
+
+article h1 {
+    font-size: 24px;
+}
+
+/* ARTIClE Projects */
+
+article .projects {
+    grid-area: projects;
+}
+
+article .projects h1 {
+    padding-left: 16px;
+}
+
+article .projects .content {
+    padding: 0px 16px;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+article .projects .content .project {
+    background-color: var(--white);
+    padding: 8px;
+    padding-left: 24px;
+    border-left: 10px solid var(--yellow);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+article .projects .content .project .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+article .projects .content .project .stats {
+    display: flex;
+    justify-content: end;
+    column-gap: 16px;
+}
+
+article .projects .content .project .stats .icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ARTIClE Annoncements */
+
+article .announcements {
+    grid-area: announcements;
+}
+
+article .announcements .content {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+    padding: 10px 24px;
+    border-radius: 10px;
+}
+
+article .announcements .content .announcement {
+    border-bottom: 1px solid black;
+}
+
+article .announcements .content .announcement:last-of-type {
+    border-bottom: none;
+}
+
+article .announcements .content .announcement .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+article .announcements .content .announcement .text {
+    font-size: 12px;
+}
+/* ARTIClE Trending */
+
+article .tending {
+    grid-area: tending;
+}
+
+article .tending .content {
+    background-color: var(--white);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+article .tending .content .trend {
+    display: flex;
+    column-gap: 16px;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+}
+
+article .tending .content .trend img {
+    width: 30px;
+    height: 30px;
+    background-color: var(--grey);
+    border-radius: 100%;
+}
+
+article .tending .content .trend p {
+    margin: 0;
+    padding: 0;
+}
+
+article .tending .content .trend p.username {
+    padding-bottom: 8px;
 }
